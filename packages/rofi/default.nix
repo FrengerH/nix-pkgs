@@ -30,10 +30,7 @@ symlinkJoin {
       ${lib.optionalString (plugins != []) ''--add-flags "-plugin-path $out/lib/rofi"''}
 
     ${lib.optionalString symlink-dmenu "ln -s ${rofi-unwrapped}/bin/rofi $out/bin/dmenu"}
-
     rm $out/bin/rofi-theme-selector
-    makeWrapper ${rofi-unwrapped}/bin/rofi-theme-selector $out/bin/rofi-theme-selector \
-      --prefix XDG_DATA_DIRS : $out/share
   '';
 
   meta = rofi-unwrapped.meta // {

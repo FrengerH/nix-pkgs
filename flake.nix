@@ -17,7 +17,7 @@
       lib = nixpkgs.lib;
     in with pkgs; {
       rofi = callPackage ./packages/rofi {
-        theme = "./packages/rofi/themes/rofi-theme.rasi";
+        theme = builtins.toFile "rofi-theme.rasi" (builtins.readFile ./packages/rofi/themes/rofi-theme.rasi);
       };
       dwm = callPackage ./packages/dwm {};
     };
