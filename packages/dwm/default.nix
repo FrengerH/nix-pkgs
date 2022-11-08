@@ -2,11 +2,14 @@
 
 stdenv.mkDerivation rec {
   pname = "dwm";
-  version = "6.3";
+  version = "6.3.3";
 
   src = fetchurl {
     url = "https://github.com/FrengerH/dwm/archive/refs/tags/${version}.tar.gz";
-    sha256 = "sha256-1HflLYRJK5g6ukmedhMQ2N9+h7URHBf8zhq7BD5hWr0=";
+    sha256 = "sha256-kbYFKSddA7hv07T68wTnr4DNY0Acsi0jVkBpsPOq1Fs="; # Version 6.3.3
+    # sha256 = "sha256-vmyxFgcRgy9ITnn8ypHyZxYynIR21HHrSt+m2ZjQ18M="; # Version 6.3.2
+    # sha256 = "sha256-bX+E5mRGhWWmwJYh9fL4zGQBZTX4kW2PSPyNlepHhMw="; # Version 6.3.1
+    # sha256 = "sha256-1HflLYRJK5g6ukmedhMQ2N9+h7URHBf8zhq7BD5hWr0="; # Version 6.3
   };
 
   buildInputs = [ libX11 libXinerama libXft ];
