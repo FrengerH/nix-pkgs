@@ -2,11 +2,12 @@
 
 stdenv.mkDerivation rec {
   pname = "dwm";
-  version = "6.3.3";
+  version = "6.3.4";
 
   src = fetchurl {
     url = "https://github.com/FrengerH/dwm/archive/refs/tags/${version}.tar.gz";
-    sha256 = "sha256-kbYFKSddA7hv07T68wTnr4DNY0Acsi0jVkBpsPOq1Fs="; # Version 6.3.3
+    sha256 = "sha256-mtNffAs/brGyDHudNt1w41TykOKM81hBkhhFTJA7Ahg="; # Version 6.3.4
+    # sha256 = "sha256-kbYFKSddA7hv07T68wTnr4DNY0Acsi0jVkBpsPOq1Fs="; # Version 6.3.3
     # sha256 = "sha256-vmyxFgcRgy9ITnn8ypHyZxYynIR21HHrSt+m2ZjQ18M="; # Version 6.3.2
     # sha256 = "sha256-bX+E5mRGhWWmwJYh9fL4zGQBZTX4kW2PSPyNlepHhMw="; # Version 6.3.1
     # sha256 = "sha256-1HflLYRJK5g6ukmedhMQ2N9+h7URHBf8zhq7BD5hWr0="; # Version 6.3
@@ -27,7 +28,6 @@ stdenv.mkDerivation rec {
       configFile =
         if lib.isDerivation conf || builtins.isPath conf
         then conf else writeText "config.def.h" conf;
-      tmuxStart = writeShellScriptBin "tmuxStart" (builtins.readFile ./scripts/tmux-start.sh);
       secretsFile = writeText "secrets.h" ''
         static const char path[] = "";
         static const char tmux_start[] = "";
@@ -54,5 +54,4 @@ stdenv.mkDerivation rec {
     license = licenses.mit;
     maintainers = with maintainers; [ viric neonfuz ];
     platforms = platforms.all;
-  };
-}
+  };}
