@@ -11,6 +11,6 @@ symlinkJoin {
 
   postBuild = ''
     wrapProgram $out/bin/st \
-    ${lib.optionalString (startScript != null) ''--add-flags "-e ${startScript}"''} \
+    ${lib.optionalString (startScript != null) ''--add-flags "-e ${startScript}" "$@"''} \
   '';
 }
