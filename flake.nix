@@ -50,5 +50,6 @@
       };
       dwm = callPackage ./packages/dwm {};
       dwmblocks = callPackage ./packages/dwmblocks { conf = dwmblocksConf; };
+      neovim = callPackage ./packages/neovim {};
     };
 }
