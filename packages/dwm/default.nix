@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   pname = "dwm";
-  version = "test-4";
+  version = "test-5";
 
   src = fetchurl {
     url = "https://github.com/FrengerH/dwm/archive/refs/tags/${version}.tar.gz";
-    sha256 = "sha256-xQlrUIf43xdY+hYLrvQy3L8i1+k847n7tSIxsLoIUl4="; # Version test-4
+    # sha256 = "sha256-xQlrUIf43xdY+hYLrvQy3L8i1+k847n7tSIxsLoIUl4="; # Version test-4
     # sha256 = "sha256-wxAydSYYptUc1NRoapgI2gHWnUqYJ7TjyCJc3jkBnZs="; # Version test-3
     # sha256 = "sha256-V8B+tgYmn0ksWLpGPJzcad7bclYeRoo2PcUex1Qh5gM="; # Version test-2
     # sha256 = "sha256-VOJrq7Q5mkFieYQvlS0OgjfaNIXI5BYV8IiiG0cQv00="; # Version test-1
