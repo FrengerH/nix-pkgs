@@ -27,7 +27,7 @@ stdenv.mkDerivation {
 
   meta = with lib; {
     description = "Modular status bar for dwm written in c";
-    homepage = "https://github.com/torrinfail/dwmblocks";
+    homepage = "https://github.com/LukeSmithxyz/dwmblocks";
     license = licenses.isc;
     maintainers = with maintainers; [ sophrosyne ];
     platforms = platforms.linux;

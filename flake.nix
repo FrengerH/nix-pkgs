@@ -49,7 +49,15 @@
         );
       };
       dwm = callPackage ./packages/dwm {};
-      dwmblocks = callPackage ./packages/dwmblocks { conf = dwmblocksConf; };
+      dwmblocks = callPackage ./packages/dwmblocks { 
+        conf = dwmblocksConf;
+        patches = [
+          (fetchpatch {
+            url = "https://raw.githubusercontent.com/LukeSmithxyz/dwmblocks/master/patches/dwmblocks-statuscmd-signal.diff";
+            sha256 = "sha256-crceCEPE7mjlkbMmSQQMQ1h6wZVr2TUOfiibeNHf3YM=";
+          })
+        ];
+      };
       neovim = callPackage ./packages/neovim {};
     };
 }
