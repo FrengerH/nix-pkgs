@@ -19,10 +19,10 @@ case "$clock" in
 esac
 
 case $BLOCK_BUTTON in
-	1) xsetroot -name button 1 ;;
-	2) xsetroot -name button 2 ;;
-	3) xsetroot -name button 3 ;;
-	6) xsetroot -name button 6 ;;
+	1) sh ;;
+	2) sh ;;
+	3) sh ;;
+	6) sh ;;
 esac
 
 date "+(%a) %d %b %Y $icon%H:%M%p"
