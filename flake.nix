@@ -43,7 +43,7 @@
         st-unwrapped = (callPackage ./packages/st {}); 
         startScript = "${tmux}/bin/tmux";
       };
-      rofi = callPackage ./packages/rofi {
+      rofi = callPackage rofi {
         theme = builtins.toFile "rofi-theme.rasi" (
           builtins.readFile ./packages/rofi/themes/rofi-theme.rasi
         );
