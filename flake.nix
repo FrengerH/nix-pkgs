@@ -25,6 +25,7 @@
         static const Block blocks[] = {
             /*Icon*/	/*Command*/		            /*Update Interval*/	/*Update Signal*/
             {"",	    "${clock}/bin/clock",	    30,	                1}
+            {"",	    "${clock}/bin/clock",	    30,	                3}
         };
 
         //Sets delimiter between status commands. NULL character ('\0') means no delimiter.
