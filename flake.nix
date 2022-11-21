@@ -23,13 +23,23 @@
       dwmblocksConf = pkgs.writeText "config.h" ''
         //Modify this file to change what commands output to your statusbar, and recompile using the make command.
         static const Block blocks[] = {
-            /*Icon*/	/*Command*/		            /*Update Interval*/	/*Update Signal*/
-            {"",	    "${clock}/bin/clock",	    30,	                1},
-            {"",	    "${clock}/bin/clock",	    30,	                3}
+                  /*Command*/		            /*Update Interval*/	       /*Update Signal*/
+            BLOCK("${clock}/bin/clock",         0,                         5),
+            BLOCK("${clock}/bin/clock",         0,                         5)
         };
 
-        //Sets delimiter between status commands. NULL character ('\0') means no delimiter.
-        static char *delim = " ";  
+        // Maximum possible length of output from block, expressed in number of characters.
+        #define CMDLENGTH 50
+
+        // The status bar's delimiter which appears in between each block.
+        #define DELIMITER " "
+
+        // Adds a leading delimiter to the statusbar, useful for powerline.
+        #define LEADING_DELIMITER
+
+        // Enable clickability for blocks. Needs `dwm` to be patched appropriately.
+        // See the "Clickable blocks" section below.
+        #define CLICKABLE_BLOCKS
       '';
 
     in with pkgs; {
